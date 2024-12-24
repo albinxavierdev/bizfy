@@ -1,0 +1,58 @@
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const AgencyHero = () => {
+  useEffect(() => {
+    if (window.innerWidth > 480) {
+      const agencyText = document.querySelector('.agency-hero-heading');
+      const text = new SplitType(agencyText, { types: 'chars' });
+
+      gsap.fromTo(
+        text.chars,
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          delay: 0.2,
+          y: 0,
+          duration: 1,
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: agencyText,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: true,
+            markers: false,
+          },
+        }
+      );
+    }
+  }, []);
+
+  return (
+    <div className="bg-[#01111f] h-full flex items-center justify-start p-8 overflow-hidden">
+      <div className="w-full text-start">
+        <div className="mt-4">
+          <h1 className="text-[1.5rem] font-normal text-white leading-tight mb-4 md:text-[3.5rem]">
+            We&apos;re a <span className="text-[#0E62A6] font-semibold">full-service</span> AI Automation <br />
+            Agency
+            <span className="text-[1.5rem] sm:text-[3rem] w-14 sm:w-20 h-12 rounded-[20px] inline-block text-center">👋</span>
+            <span>We turn businesses into AI-</span>
+            <br />
+            <span className="text-[#0E62A6] font-semibold">driven</span>
+            <span className="text-[1.5rem] sm:text-[3rem] w-14 sm:w-20 h-12 rounded-[20px] inline-block text-center">✨</span>
+            <span>industry leaders.</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AgencyHero;
