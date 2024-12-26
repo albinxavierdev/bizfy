@@ -110,15 +110,15 @@ const ContactPage = () => {
         </div>
       )}
 
-      <div className="grid md:grid-cols-2 gap-8 w-full max-w-6xl">
-        <div className="space-y-6">
-          <div>
+      <div className="grid md:grid-cols-2 gap-0 w-full max-w-6xl p-4 ">
+        <div className="space-y-6 font-4xl w-2/3">
+          <div className="pb-4 border-b border-gray-500">
             <p className="text-gray-400 font-semibold">Office</p>
             <p className="text-white">Keizersgracht 520, 1017EK</p>
             <p className="text-white">Amsterdam</p>
             <p className="text-white">The Netherlands</p>
           </div>
-          <div>
+          <div className="pb-4 border-b border-gray-500">
             <p className="text-gray-400 font-semibold">Email</p>
             <a
               href="mailto:mail@nebula.com"
@@ -127,7 +127,7 @@ const ContactPage = () => {
               mail@nebula.com <span>↗</span>
             </a>
           </div>
-          <div>
+          <div className="pb-4 border-b border-gray-500">
             <p className="text-gray-400 font-semibold">Phone</p>
             <a
               href="tel:+31202439223"
@@ -140,7 +140,7 @@ const ContactPage = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-slate-800 p-6 rounded-lg shadow-md space-y-4"
+          className=" p-6 rounded-lg space-y-4"
           data-aos="flip-left"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ const ContactPage = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="John"
-                className="border border-gray-400 rounded w-full px-3 py-2"
+                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.firstName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -168,7 +168,7 @@ const ContactPage = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Doe"
-                className="border border-gray-400 rounded w-full px-3 py-2"
+                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.lastName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -187,7 +187,7 @@ const ContactPage = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="john@example.com"
-                className="border border-gray-400 rounded w-full px-3 py-2"
+                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">
@@ -203,7 +203,7 @@ const ContactPage = () => {
                 value={formData.contact}
                 onChange={handleChange}
                 placeholder="1234567890"
-                className="border border-gray-400 rounded w-full px-3 py-2"
+                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.contact && (
                 <p className="text-red-500 text-sm mt-1">
@@ -221,7 +221,7 @@ const ContactPage = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Your message here..."
-              className="border border-gray-400 rounded w-full px-3 py-2"
+              className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
             ></textarea>
             {errors.message && (
               <p className="text-red-500 text-sm mt-1">

@@ -48,12 +48,12 @@ const ServicesSection = () => {
       description:
         "We develop advanced chatbots that are reactive, understand nuances, and are capable of solving extremely complicated queries.",
       content: (
-        <div className="p-4 border border-gray-700 rounded-lg">
-          <div className="flex items-start gap-4">
-            <Bot className="text-blue-600" size={30} />
+        <div className="p-4 border border-gray-700 rounded-lg flex h-full justify-center items-center">
+          <div className="flex items-start justify-center gap-4">
             <div>
-              <div className="flex justify-between text-white">
-                <span className="font-bold">AI assistant</span>
+            <Bot className="text-blue-600" size={30} />
+              <div className="flex justify-between text-white flex-col">
+                <div className="font-bold pr-2 ">AI assistant</div><br />
                 <span className="text-gray-400">Siena Sinner</span>
               </div>
               <div className="text-gray-400">Sure, here&apos;s a summary:</div>
@@ -105,13 +105,13 @@ const ServicesSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-[#01111f] p-6 border border-gray-600 rounded-lg"
+            className="bg-[#01111f] p-6 border border-gray-600 rounded-lg flex flex-col justify-end"
             data-aos="fade-up">
             {service.content}
-            <h2 className="text-2xl font-bold text-white mt-6">
+            <h2 className="text-xl font-bold text-white mt-6">
               {service.title}
             </h2>
-            <p className="text-gray-400 text-sm mt-2">{service.description}</p>
+            <p className="text-gray-400  text-sm mt-2">{service.description}</p>
           </div>
         ))}
       </div>

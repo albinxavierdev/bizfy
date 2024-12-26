@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const AgencyHero = () => {
   useEffect(() => {
     if (window.innerWidth > 480) {
-      const agencyText = document.querySelector('.agency-hero-heading');
+      const agencyText = document.querySelector('.agencyText');
       const text = new SplitType(agencyText, { types: 'chars' });
 
       gsap.fromTo(
@@ -36,7 +36,7 @@ const AgencyHero = () => {
   }, []);
 
   return (
-    <div className="bg-[#01111f] h-full flex items-center justify-start p-8 overflow-hidden">
+    <div className= "agencyText bg-[#01111f] h-full flex items-center justify-start p-8 overflow-hidden">
       <div className="w-full text-start">
         <div className="mt-4">
           <h1 className="text-[1.5rem] font-normal text-white leading-tight mb-4 md:text-[3.5rem]">

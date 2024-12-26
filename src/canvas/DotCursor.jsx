@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 
 const DotCursor = () => {
   const cursorRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -43,7 +43,7 @@ const DotCursor = () => {
 
   return (
     <>
-      {!isMobile && <div ref={cursorRef} className="cursor"></div>}
+      {!isMobile && <div ref={cursorRef} className=" w-3 h-3 bg-[#0E62A6] rounded-full z-[9999] transform translate-y-1/2 translate-x-1/2 fixed"></div>}
     </>
   );
 };
