@@ -85,10 +85,10 @@ const ContactPage = () => {
           message: "",
         });
       } else {
-        // alert(
-        //   "This email ID or phone number is already used. Try again."
-        // );
-        alert("data submitted");
+        alert(
+          "This email ID or phone number is already used. Try again."
+        );
+        // alert("data submitted");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
