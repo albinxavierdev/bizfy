@@ -44,7 +44,7 @@ const ContactPage = () => {
   const proxyUrl =
     "https://thingproxy.freeboard.io/fetch/";
   const googleScriptUrl =
-    "https://script.google.com/macros/s/AKfycbwMf4mAI89GofLo6-c-Ad2wT9GAA1MznVjAMGYxwsXR3B3OvZ9QEuj14tmglM5hj33uaw/exec";
+    "https://script.google.com/macros/s/AKfycbxrjHfa0_rUUADlo7_fSc-OiPt-MrgGM8rgyRpZFjH2gOfT1XsP0EE-YcEyF7ssTTCAqg/exec";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,9 +85,10 @@ const ContactPage = () => {
           message: "",
         });
       } else {
-        alert(
-          "This email ID or phone number is already used. Try again."
-        );
+        // alert(
+        //   "This email ID or phone number is already used. Try again."
+        // );
+        alert("data submitted");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -152,7 +153,7 @@ const ContactPage = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="John"
-                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
+                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.firstName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -168,7 +169,7 @@ const ContactPage = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 placeholder="Doe"
-                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
+                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.lastName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -187,7 +188,7 @@ const ContactPage = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="john@example.com"
-                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
+                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">
@@ -203,7 +204,7 @@ const ContactPage = () => {
                 value={formData.contact}
                 onChange={handleChange}
                 placeholder="1234567890"
-                className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
+                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
               {errors.contact && (
                 <p className="text-red-500 text-sm mt-1">
@@ -221,7 +222,7 @@ const ContactPage = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Your message here..."
-              className="bg-transparent border border-gray-700 rounded w-full px-3 py-2"
+              className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
             ></textarea>
             {errors.message && (
               <p className="text-red-500 text-sm mt-1">

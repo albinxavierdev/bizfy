@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { Github, MessageSquare, Slack } from 'lucide-react';
 
 const Process = () => {
@@ -108,10 +109,10 @@ const App = () => {
         </h1>
       </nav>
       <div className="grid gap-6 sm:gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3" data-aos="fade-up"
-     data-aos-duration="3000">
+     >
         {processSteps.map((step, index) => (
           <div key={index} className="p-4 sm:p-6 border border-gray-500 rounded-lg flex flex-col justify-end" data-aos="fade-up"
-          data-aos-duration="3000">
+          >
             <div className='h-full w-full'>{step.content}</div>
             <h2 className="text-lg sm:text-xl font-bold mt-4">
               {step.number}. {step.title}

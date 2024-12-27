@@ -44,7 +44,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <div className="w-full h-full bg-[#01111f] text-white py-14 px-5 text-center flex flex-col items-center justify-center">
+    <div className="w-full h-full bg-[#01111f] text-white py-14 px-8 text-center flex flex-col items-center justify-center">
       <h2
         className="text-4xl text-left w-full mb-10"
         data-aos="fade-right"
@@ -53,14 +53,15 @@ const Testimonial = () => {
       </h2>
       <Swiper
         modules={[Pagination, Navigation, Autoplay]}
-        spaceBetween={0}
+        spaceBetween={1}
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 3500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
-        pagination={{ clickable: true }}
+        pagination={{ clickable: true
+         }}
         navigation={true}
         breakpoints={{
           768: {
@@ -74,7 +75,7 @@ const Testimonial = () => {
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[rgba(19,19,19,0.1)] border border-gray-500 rounded-lg p-10 max-w-[400px] mx-auto text-left shadow-md transition-transform hover:-translate-y-2">
+            <div className="bg-[rgba(19,19,19,0.1)] border border-gray-500 rounded-lg p-10 max-w-[400px] mx-auto text-left shadow-md transition-transform">
               <p className="text-lg italic text-white sm:text-xl">{testimonial.quote}</p>
               <p className="text-md text-gray-400 mt-3 font-sans sm:text-sm">
                 {testimonial.para}
