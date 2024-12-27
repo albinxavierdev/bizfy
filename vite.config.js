@@ -7,8 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://test-bizfy.vercel.app/', // Backend server
-        changeOrigin: true, // Ensures the origin of the host header matches the target
+        target: 'https://script.google.com/macros/s/AKfycbxrjHfa0_rUUADlo7_fSc-OiPt-MrgGM8rgyRpZFjH2gOfT1XsP0EE-YcEyF7ssTTCAqg/exec', // Backend server
+        changeOrigin: true,
+        secure: false, // Ensures the origin of the host header matches the target
         rewrite: (path) => path.replace(/^\/api/, ''), // Optional: Remove '/api' from the request path
       },
     },
