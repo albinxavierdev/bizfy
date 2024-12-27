@@ -44,7 +44,7 @@ const ContactPage = () => {
   const proxyUrl =
     "https://thingproxy.freeboard.io/fetch/";
   const googleScriptUrl =
-    "https://script.google.com/macros/s/AKfycbwxdVaCxXBuAytxSGL_uMBcXXD9bI0pUGfngIJ158cbLixmBh3S1lsar6St1ukg11Su7Q/exec";
+    "https://script.google.com/macros/s/AKfycbwvj92jVTrsyta56GLucGNvWqicjkjWY5gbw1rHta7OrExaxiVuVPmvodQrxoCZ0aTRkQ/exec";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
