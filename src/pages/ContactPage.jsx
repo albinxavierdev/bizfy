@@ -70,13 +70,14 @@ const ContactPage = () => {
         {
           headers: {
             "Content-Type": "application/json",
+            "Accept" : "application/json"
           },
         }
       );
 
       if (response.data.success) {
         setSuccessMessage("Form Submitted Successfully!");
-        setTimeout(() => setSuccessMessage(""), 3000);
+        setTimeout(() => setSuccessMessage(""), 2000);
         setFormData({
           firstName: "",
           lastName: "",
@@ -84,7 +85,8 @@ const ContactPage = () => {
           contact: "",
           message: "",
         });
-      } else {
+      } 
+      else {
         alert(
           "This email ID or phone number is already used. Try again."
         );
