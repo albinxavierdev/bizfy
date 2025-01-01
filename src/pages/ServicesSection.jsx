@@ -16,7 +16,7 @@ const ServicesSection = () => {
     {
       title: "Workflow automations",
       description:
-        "We automate your workflows by connecting your favourite applications. Boosting efficiency and enhancing productivity.",
+        "Streamline your operations by automating repetitive tasks and processes, boosting efficiency and reducing manual workload.",
       content: (
         <div className="p-4 border border-gray-600 rounded-lg">
           <div className="flex items-center gap-4 p-2 mb-2 border border-gray-600 rounded-lg">
@@ -44,9 +44,9 @@ const ServicesSection = () => {
       ),
     },
     {
-      title: "Chatbot development",
+      title: "Gen AI Marketing & Content",
       description:
-        "We develop advanced chatbots that are reactive, understand nuances, and are capable of solving extremely complicated queries.",
+        "Create engaging, AI-powered content and marketing campaigns that resonate with your audience while maintaining brand authenticity.",
       content: (
         <div className="p-4 border border-gray-700 rounded-lg flex h-full justify-center items-center">
           <div className="flex items-start justify-center gap-4">
@@ -63,9 +63,26 @@ const ServicesSection = () => {
       ),
     },
     {
-      title: "Business consulting",
+      title: "Custom LLM Deployments",
       description:
-        "Using our expertise, we delve deep into your organisation and consult you on how AI-driven automations could enhance your operations.",
+        "Design and implement customized language models tailored to your specific business requirements and industry needs.",
+      content: (
+        <div className="space-y-4 h-full border border-gray-700 rounded-lg p-6">
+          {[{ label: "Speed", value: 75 }, { label: "Security", value: 70 }, { label: "Accuracy", value: 45 }].map((metric, index) => (
+            <div key={index}>
+              <div className="text-white mb-1">{metric.label}</div>
+              <div className="w-full h-2 bg-gray-800 rounded-full">
+                <div className="h-full bg-[#0E62A6] rounded-full" style={{ width: `${metric.value}%` }}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: "AI Consultation & Outsourcing",
+      description:
+        "Get expert guidance and dedicated resources to develop and execute your AI strategy from concept to implementation.",
       content: (
         <div className="relative h-64 p-4 border border-gray-700 rounded-lg">
           <ResponsiveContainer width="100%" height="100%">
@@ -93,13 +110,13 @@ const ServicesSection = () => {
   return (
     <div className="bg-[#01111f] h-full px-8 py-16" data-aos="fade-up">
       <nav className="flex justify-between items-center mb-16">
-        <h1 className="text-4xl font-bold text-white" data-aos="fade-up">
+        <h1 className="text-4xl font-bold text-white" data-aos="fade-right">
           Our <span className="text-blue-600">services</span>
         </h1>
       </nav>
 
       <div
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        className="px-10 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-2"
         data-aos="fade-up"
       >
         {services.map((service, index) => (

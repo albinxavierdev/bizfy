@@ -5,8 +5,8 @@ const Process = () => {
   const processSteps = [
     {
       number: "01",
-      title: "Subscribe",
-      description: "Choose your preferred plan to start and cancel or pause at anytime you like. So you're as flexible as your business' needs.",
+      title: "Discovery",
+      description: "Let's explore your needs together, combining your insights with fresh perspectives to uncover the best solutions.",
       content: (
         <div className="flex flex-col justify-center items-center gap-4 p-4 border border-gray-500 rounded-lg h-full">
           <div className="w-full flex items-center gap-4 border border-gray-600 rounded-lg px-4 py-3">
@@ -25,8 +25,8 @@ const Process = () => {
     },
     {
       number: "02",
-      title: "Request",
-      description: "Start requesting the workflow-automations and AI applications, your developers are right there to transform your ideas into reality.",
+      title: "Analysis",
+      description: "We'll develop a precise strategy that fits your resources and goals - practical plans backed by clear reasoning.",
       content: (
         <div className="h-full grid grid-cols-2 place-content-center sm:grid-cols-3 md:grid-cols-4 auto-rows-max gap-4 p-4 border border-gray-500 rounded-lg">
           {[<Github />, <Slack />, <MessageSquare />, "🌐", "⚙️", "🚀", "📝", "💬"].map((icon, index) => (
@@ -39,8 +39,8 @@ const Process = () => {
     },
     {
       number: "03",
-      title: "Build",
-      description: "Our developers swiftly begin building your stable solutions, prioritising speed without compromising quality.",
+      title: "Execution",
+      description: "Time for action. We'll transform our carefully crafted plans into tangible results that drive meaningful change",
       content: (
         <div className="bg-[#01111f] p-4 rounded-lg overflow-hidden border border-gray-500 ">
           <pre className="text-gray-400 text-sm font-mono">
@@ -61,48 +61,49 @@ const App = () => {
         </div>
       ),
     },
-    {
-      number: "04",
-      title: "Test & optimise",
-      description: "You either approve or request revisions - we're dedicated to refining our builds until you're fully satisfied.",
-      content: (
-        <div className="space-y-4 border border-gray-500 rounded-lg p-6">
-          {[{ label: "Speed", value: 75 }, { label: "Security", value: 70 }, { label: "Accuracy", value: 45 }].map((metric, index) => (
-            <div key={index}>
-              <div className="text-white mb-1">{metric.label}</div>
-              <div className="w-full h-2 bg-gray-800 rounded-full">
-                <div className="h-full bg-[#0E62A6] rounded-full" style={{ width: `${metric.value}%` }}></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ),
-    },
-    {
-      number: "05",
-      title: "Become an industry leader",
-      description: "Continue requesting as many workflow-automation's and AI-applications, transform your organization into industry leader.",
-      content: (
-        <div className="w-[8rem] relative sm:w-[10rem] md:w-[12rem] h-[8rem] sm:h-[10rem] md:h-[12rem] mx-auto">
-          <svg viewBox="0 0 200 200" className="absolute inset-0">
-            <defs>
-              <radialGradient id="globe-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                <stop offset="0%" stopColor="rgb(16, 185, 129)" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="rgb(16, 185, 129)" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-            <circle cx="100" cy="100" r="98" fill="none" stroke="url(#globe-gradient)" strokeWidth="0.5" />
-            {Array.from({ length: 100 }).map((_, i) => (
-              <circle key={i} cx={100 + Math.cos(i * 0.5) * 80} cy={100 + Math.sin(i * 0.5) * 80} r="0.5" fill="rgb(16, 185, 129)" fillOpacity="0.5" />
-            ))}
-          </svg>
-        </div>
-      ),
-    },
+    
+    // {
+    //   number: "04",
+    //   title: "Test & optimise",
+    //   description: "You either approve or request revisions - we're dedicated to refining our builds until you're fully satisfied.",
+    //   content: (
+    //     <div className="space-y-4 border border-gray-500 rounded-lg p-6">
+    //       {[{ label: "Speed", value: 75 }, { label: "Security", value: 70 }, { label: "Accuracy", value: 45 }].map((metric, index) => (
+    //         <div key={index}>
+    //           <div className="text-white mb-1">{metric.label}</div>
+    //           <div className="w-full h-2 bg-gray-800 rounded-full">
+    //             <div className="h-full bg-[#0E62A6] rounded-full" style={{ width: `${metric.value}%` }}></div>
+    //           </div>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   number: "05",
+    //   title: "Become an industry leader",
+    //   description: "Continue requesting as many workflow-automation's and AI-applications, transform your organization into industry leader.",
+    //   content: (
+    //     <div className="w-[8rem] relative sm:w-[10rem] md:w-[12rem] h-[8rem] sm:h-[10rem] md:h-[12rem] mx-auto">
+    //       <svg viewBox="0 0 200 200" className="absolute inset-0">
+    //         <defs>
+    //           <radialGradient id="globe-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    //             <stop offset="0%" stopColor="rgb(16, 185, 129)" stopOpacity="0.2" />
+    //             <stop offset="100%" stopColor="rgb(16, 185, 129)" stopOpacity="0" />
+    //           </radialGradient>
+    //         </defs>
+    //         <circle cx="100" cy="100" r="98" fill="none" stroke="url(#globe-gradient)" strokeWidth="0.5" />
+    //         {Array.from({ length: 100 }).map((_, i) => (
+    //           <circle key={i} cx={100 + Math.cos(i * 0.5) * 80} cy={100 + Math.sin(i * 0.5) * 80} r="0.5" fill="rgb(16, 185, 129)" fillOpacity="0.5" />
+    //         ))}
+    //       </svg>
+    //     </div>
+    //   ),
+    // },
   ];
 
   return (
-    <div className="bg-[#01111f] text-white p-8 sm:p-8">
+    <div className="bg-[#01111f] text-white p-8 mt-12 sm:p-8">
       <nav className="mb-8 sm:mb-16 w-full">
         <h1 className="text-4xl sm:text-4xl font-bold text-white" data-aos="fade-right">
           Our <span className="text-[#0E62A6]">process</span>

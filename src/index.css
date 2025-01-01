@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "pop";
+  src: url("../src/assets/font/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7M.woff2");
+}
+
+
+
 ::-webkit-scrollbar {
   width: 5px;
 }

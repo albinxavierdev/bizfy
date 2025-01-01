@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full flex justify-between items-center px-4 py-2 h-[70px]  backdrop-blur-md text-white z-50">
+    <nav className="fixed top-0 w-full flex justify-between items-center px-4 py-2 h-[70px] backdrop-blur-md text-white z-50">
       {/* Logo */}
       <div className="navbar-logo">
         <span className={`transition-all duration-300 ${isMenuOpen ? "w-[250px] h-[50px]" : "w-[200px] h-[40px]"}`}>
@@ -30,7 +30,7 @@ const Navbar = () => {
           isMenuOpen ? "flex" : "hidden"
         }`}
       >
-        {["hero", "agency", "process", "services", "testimonials", "contact"].map((item, index) => (
+        {[ "process", "services", "projects", "contact us"].map((item, index) => (
           <Link
             key={index}
             to={item}
@@ -45,11 +45,11 @@ const Navbar = () => {
       </div>
 
       {/* Button */}
-      <div className="hidden lg:block">
-        <button className="px-4 py-2 text-sm font-medium text-white bg-transparent border border-white/30 rounded-lg hover:bg-gray-700 hover:border-white/70 transition-all">
-          Buy this template
-        </button>
-      </div>
+      {/* <div className="hidden lg:block">
+        button className="px-4 py-2 text-sm font-medium text-white bg-transparent border border-white/30 rounded-lg hover:bg-gray-700 hover:border-white/70 transition-all">
+          Login
+        </button> 
+      </div> */}
     </nav>
   );
 };
