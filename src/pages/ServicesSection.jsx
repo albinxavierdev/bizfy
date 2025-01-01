@@ -40,7 +40,7 @@ const ServicesSection = () => {
               <div className="text-gray-400">Write personalised message</div>
             </div>
           </div> */}
-          <img src="/public/Our Services/6.jpg" alt="" className="rounded-lg"/>
+          <img src="/Our Services/6.jpg" alt="" className="rounded-lg"/>
         </div>
       ),
     },
@@ -60,7 +60,7 @@ const ServicesSection = () => {
               <div className="text-gray-400">Sure, here&apos;s a summary:</div>
             </div>
           </div> */}
-          <img src="/public/Our Services/7.jpg" alt="" className="rounded-lg"/>
+          <img src="/Our Services/7.jpg" alt="" className="rounded-lg"/>
         </div>
       ),
     },
@@ -78,7 +78,7 @@ const ServicesSection = () => {
               </div>
             </div>
           ))} */}
-          <img src="/public/Our Services/8.jpg" alt="" className="rounded-lg h-full"/>
+          <img src="/Our Services/8.jpg" alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },
@@ -105,7 +105,7 @@ const ServicesSection = () => {
               />
             </AreaChart>
           </ResponsiveContainer> */}
-          <img src="/public/Our Services/9.jpg" alt="" className="rounded-lg h-full"/>
+          <img src="/Our Services/9.jpg" alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },

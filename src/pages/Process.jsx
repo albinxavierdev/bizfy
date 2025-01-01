@@ -20,7 +20,7 @@ const Process = () => {
             <button className="px-4 py-2 rounded-full bg-[#01111f] text-white text-sm sm:text-base">Pro</button>
             <button className="px-4 py-2 rounded-full bg-[#01111f] text-white text-sm sm:text-base">Custom</button>
           </div> */}
-          <img src="/public/Our Process/5.jpg " alt="" className="rounded-lg h-full"/>
+          <img src="/Our Process/5.jpg " alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },
@@ -59,7 +59,7 @@ const App = () => {
 };`}
             </code>
           </pre> */}
-          <img src="/public/Our Process/6.jpg " alt="" className="rounded-lg h-full"/>
+          <img src="/Our Process/6.jpg " alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },
