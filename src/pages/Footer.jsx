@@ -5,11 +5,11 @@ const Footer = () => {
             <header className="flex justify-between px-8 py-8">
                 <h1 className="text-4xl font-medium hidden sm:block" data-aos="fade-right">Let&apos;s talk <span className="text-blue-600">Business</span></h1>
                 <a
-                    href="mailto:mail@nebula.com"
+                    href="mailto:info@bizfy.in"
                     className="text-4xl relative hover:after:w-full hover:after:bg-[#0E62A6] after:absolute after:left-0 after:bottom-1 after:h-[2px] after:w-0 after:transition-all"
                     data-aos="fade-left"
                 >
-                    mail<span className="text-[#0E62A6]">@</span>bizfy.com
+                    info<span className="text-[#0E62A6]">@</span>bizfy.com
                 </a>
             </header>
 

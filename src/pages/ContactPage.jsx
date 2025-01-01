@@ -83,7 +83,7 @@ const ContactPage = () => {
               href="mailto:info@bizfy.in"
               className="text-blue-600 hover:underline"
             >
-              mailto:info@bizfy.in <span>↗</span>
+              info@bizfy.in <span>↗</span>
             </a>
           </div>
           <div className="pb-4 border-b border-gray-500">
@@ -133,7 +133,7 @@ const ContactPage = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="johnwick@example.com"
+                placeholder="johnwick@bizfy.in"
                 required
                 className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />

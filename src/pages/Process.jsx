@@ -106,7 +106,7 @@ const App = () => {
     <div className="bg-[#01111f] text-white p-8 mt-12 sm:p-8">
       <nav className="mb-8 sm:mb-16 w-full">
         <h1 className="text-4xl sm:text-4xl font-bold text-white" data-aos="fade-right">
-          Our <span className="text-[#0E62A6]">process</span>
+          Our <span className="text-[#0E62A6]">Process</span>
         </h1>
       </nav>
       <div className="grid gap-6 sm:gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3" data-aos="fade-up"

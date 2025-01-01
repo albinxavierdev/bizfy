@@ -111,7 +111,7 @@ const ServicesSection = () => {
     <div className="bg-[#01111f] h-full px-8 py-16" data-aos="fade-up">
       <nav className="flex justify-between items-center mb-16">
         <h1 className="text-4xl font-bold text-white" data-aos="fade-right">
-          Our <span className="text-blue-600">services</span>
+          Our <span className="text-blue-600">Services</span>
         </h1>
       </nav>
 

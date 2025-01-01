@@ -19,14 +19,14 @@ const AgencyHero = () => {
         },
         {
           opacity: 1,
-          delay: 0.2,
+          delay: 0.1,
           y: 0,
-          duration: 1,
+          duration: 1.5,
           stagger: 0.05,
           scrollTrigger: {
             trigger: agencyText,
-            start: 'top 80%',
-            end: 'top 50%',
+            start: 'top 60%',
+            end: 'top 30%',
             scrub: true,
             markers: false,
           },
