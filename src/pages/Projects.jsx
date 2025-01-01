@@ -90,7 +90,7 @@ function Projects() {
               {/* Card */}
               <div className="group relative flex h-[400px] w-[300px] flex-col justify-end rounded-2xl backdrop-blur-sm text-white overflow-hidden">
               <img src={project.img} alt={project.title} className="absolute h-full"/>
-                <div className="relative h-full flex flex-col transition-all duration-300 text-black mt-4 ml-6">
+                <div className="relative h-full flex flex-col transition-all duration-300 text-black mt-4 ml-4 mr-4 hover:backdrop-blur-sm">
                   {/* Title */}
                   <div className="text-xl font-bold group-hover:-translate-y-0 transition-all duration-300">
                     {project.title}
