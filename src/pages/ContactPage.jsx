@@ -120,7 +120,7 @@ const ContactPage = () => {
               <input
                 type="text"
                 name="lastName"
-                placeholder="Doe"
+                placeholder="Wick"
                 required
                 className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
@@ -133,7 +133,7 @@ const ContactPage = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="john@example.com"
+                placeholder="johnwick@example.com"
                 required
                 className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
               />
