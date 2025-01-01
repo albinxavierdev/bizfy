@@ -34,7 +34,7 @@ const ContactPage = () => {
     setError(""); // Clear any previous errors
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbyddNTNI5UxwPF_Y2Iqw9r6RkpOd5Pft69y45mcPnMyx6vIKynOKDDUMbpeWLru_IFb/exec";
+      "https://script.google.com/macros/s/AKfycbwrRpV5JZRhq23F30RyUxPOJ93jj6UGrz1WUQ3vOCzpbGBKvKQp4TEI3ILWmqt9m7dE/exec";
 
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
