@@ -18,8 +18,8 @@ const ServicesSection = () => {
       description:
         "Streamline your operations by automating repetitive tasks and processes, boosting efficiency and reducing manual workload.",
       content: (
-        <div className="p-4 border border-gray-600 rounded-lg">
-          <div className="flex items-center gap-4 p-2 mb-2 border border-gray-600 rounded-lg">
+        <div className=" border border-gray-600 rounded-lg">
+          {/* <div className="flex items-center gap-4 p-2 mb-2 border border-gray-600 rounded-lg">
             <Frame className="text-blue-600" size={24} />
             <div>
               <div className="text-white">Framer</div>
@@ -39,7 +39,8 @@ const ServicesSection = () => {
               <div className="text-white">OpenAI</div>
               <div className="text-gray-400">Write personalised message</div>
             </div>
-          </div>
+          </div> */}
+          <img src="/public/Our Services/6.jpg" alt="" className="rounded-lg"/>
         </div>
       ),
     },
@@ -48,8 +49,8 @@ const ServicesSection = () => {
       description:
         "Create engaging, AI-powered content and marketing campaigns that resonate with your audience while maintaining brand authenticity.",
       content: (
-        <div className="p-4 border border-gray-700 rounded-lg flex h-full justify-center items-center">
-          <div className="flex items-start justify-center gap-4">
+        <div className=" border border-gray-700 rounded-lg flex h-full justify-center items-center">
+          {/* <div className="flex items-start justify-center gap-4">
             <div>
             <Bot className="text-blue-600" size={30} />
               <div className="flex justify-between text-white flex-col">
@@ -58,7 +59,8 @@ const ServicesSection = () => {
               </div>
               <div className="text-gray-400">Sure, here&apos;s a summary:</div>
             </div>
-          </div>
+          </div> */}
+          <img src="/public/Our Services/7.jpg" alt="" className="rounded-lg"/>
         </div>
       ),
     },
@@ -67,15 +69,16 @@ const ServicesSection = () => {
       description:
         "Design and implement customized language models tailored to your specific business requirements and industry needs.",
       content: (
-        <div className="space-y-4 h-full border border-gray-700 rounded-lg p-6">
-          {[{ label: "Speed", value: 75 }, { label: "Security", value: 70 }, { label: "Accuracy", value: 45 }].map((metric, index) => (
+        <div className=" h-full border border-gray-700 rounded-lg ">
+          {/* {[{ label: "Speed", value: 75 }, { label: "Security", value: 70 }, { label: "Accuracy", value: 45 }].map((metric, index) => (
             <div key={index}>
               <div className="text-white mb-1">{metric.label}</div>
               <div className="w-full h-2 bg-gray-800 rounded-full">
                 <div className="h-full bg-[#0E62A6] rounded-full" style={{ width: `${metric.value}%` }}></div>
               </div>
             </div>
-          ))}
+          ))} */}
+          <img src="/public/Our Services/8.jpg" alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },
@@ -84,8 +87,8 @@ const ServicesSection = () => {
       description:
         "Get expert guidance and dedicated resources to develop and execute your AI strategy from concept to implementation.",
       content: (
-        <div className="relative h-64 p-4 border border-gray-700 rounded-lg">
-          <ResponsiveContainer width="100%" height="100%">
+        <div className="relative h-64  border border-gray-700 rounded-lg">
+          {/* <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <defs>
                 <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
@@ -101,7 +104,8 @@ const ServicesSection = () => {
                 strokeWidth={2}
               />
             </AreaChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer> */}
+          <img src="/public/Our Services/9.jpg" alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },

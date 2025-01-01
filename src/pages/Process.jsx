@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { Github, MessageSquare, Slack } from 'lucide-react';
+import {  MessageSquare } from 'lucide-react';
 
 const Process = () => {
   const processSteps = [
@@ -8,8 +8,8 @@ const Process = () => {
       title: "Discovery",
       description: "Let's explore your needs together, combining your insights with fresh perspectives to uncover the best solutions.",
       content: (
-        <div className="flex flex-col justify-center items-center gap-4 p-4 border border-gray-500 rounded-lg h-full">
-          <div className="w-full flex items-center gap-4 border border-gray-600 rounded-lg px-4 py-3">
+        <div className="flex flex-col justify-center items-center gap-4 border border-gray-500 rounded-lg h-full">
+          {/* <div className="w-full flex items-center gap-4 border border-gray-600 rounded-lg px-4 py-3">
             <div className="flex items-center justify-center w-8 h-8 bg-[#0E62A6] rounded-full">
               <div className="w-3 h-3 bg-white rounded-full"></div>
             </div>
@@ -19,7 +19,8 @@ const Process = () => {
             <button className="px-4 py-2 rounded-full bg-[#01111f] text-white text-sm sm:text-base">Basic</button>
             <button className="px-4 py-2 rounded-full bg-[#01111f] text-white text-sm sm:text-base">Pro</button>
             <button className="px-4 py-2 rounded-full bg-[#01111f] text-white text-sm sm:text-base">Custom</button>
-          </div>
+          </div> */}
+          <img src="/public/Our Process/5.jpg " alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },
@@ -28,9 +29,9 @@ const Process = () => {
       title: "Analysis",
       description: "We'll develop a precise strategy that fits your resources and goals - practical plans backed by clear reasoning.",
       content: (
-        <div className="h-full grid grid-cols-2 place-content-center sm:grid-cols-3 md:grid-cols-4 auto-rows-max gap-4 p-4 border border-gray-500 rounded-lg">
-          {[<Github />, <Slack />, <MessageSquare />, "🌐", "⚙️", "🚀", "📝", "💬"].map((icon, index) => (
-            <div key={index} className="flex items-center justify-center bg-[#01101d] text-gray-400 p-4 rounded-md border border-gray-700">
+        <div className="h-full grid grid-cols-2 place-content-center sm:grid-cols-3 md:grid-cols-3 auto-rows-max gap-4 p-4 border border-gray-500 rounded-lg bg-[#03223e]">
+          {[ <MessageSquare />, "🌐", "⚙️", "🚀", "📝", "💬"].map((icon, index) => (
+            <div key={index} className="flex items-center justify-center bg-[#043254] text-gray-400 p-4 rounded-md border border-gray-700">
               {icon}
             </div>
           ))}
@@ -42,8 +43,8 @@ const Process = () => {
       title: "Execution",
       description: "Time for action. We'll transform our carefully crafted plans into tangible results that drive meaningful change",
       content: (
-        <div className="bg-[#01111f] p-4 rounded-lg overflow-hidden border border-gray-500 ">
-          <pre className="text-gray-400 text-sm font-mono">
+        <div className="bg-[#01111f] rounded-lg overflow-hidden border border-gray-500 ">
+          {/* <pre className="text-gray-400 text-sm font-mono">
             <code>
               {`import { FeatureSection } from 'bizfy-template';
 const App = () => {
@@ -57,7 +58,8 @@ const App = () => {
   );
 };`}
             </code>
-          </pre>
+          </pre> */}
+          <img src="/public/Our Process/6.jpg " alt="" className="rounded-lg h-full"/>
         </div>
       ),
     },

@@ -62,7 +62,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex justify-center items-center mt-8">
-                    <div className="opacity-50 w-1/3 max-w-[400px]">
+                    <div className="opacity-80 w-1/3 max-w-[500px]">
                         <img src="/white logo-02.png" alt="Brand-logo" className="w-full" />
                     </div>
                 </div>

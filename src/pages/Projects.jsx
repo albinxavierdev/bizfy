@@ -6,47 +6,56 @@ const projectData = [
     title: "Yukti AI",
     description:
       "Indore's pioneering EduAI companion helping programming students master coding through personalized learning and real-time assistance.",
+    img:"/Our Projects/yukti.jpg",
   },
   {
     title: "Data Canvas",
     description:
       "An intelligent data analysis assistant that streamlines complex analytics workflows and enhances decision-making for data professionals.",
+      img:"/Our Projects/8.jpg",
   },
   {
     title: "Biz2B",
     description:
       "Smart automation platform that optimizes LinkedIn and Twitter engagement to drive meaningful business connections and growth.",
+      img:"/Our Projects/b2b.jpg",
   },
   {
     title: "TheDataCareer",
     description:
       "AI-powered talent matching platform revolutionizing how data professionals connect with their ideal career opportunities.",
+      img:"/Our Projects/TDC.jpg",
   },
   {
     title: "ELegalShala",
     description:
       "Voice-enabled AI legal assistant providing instant access to case law, precedents, and legal knowledge for practicing lawyers.",
+      img:"/Our Projects/EleagalShala.jpg",
   },
   {
     title: "AppliedSpace",
     description:
       "Intelligent platform connecting startup founders with relevant investors through AI-driven matchmaking and insights.",
+      img:"/Our Projects/Aspace.jpg",
   },
   {
     title: "AppliedSchool",
     description:
       "Next-generation learning management system utilizing AI to deliver personalized, application-focused educational experiences.",
+      img:"/Our Projects/Aschool.jpg",
   },
   {
     title: "StockRiver",
     description:
       "Innovative marketplace connecting AI-generated stock imagery with creators, featuring smart prompt engineering and asset management.",
+      img:"/Our Projects/Sriver.jpg",
   },
   {
     title: "EngageFlow",
     description:
       "Comprehensive AI content suite that transforms research into engaging multi-platform content across social media, automating everything from ideation to final delivery.",
-  },
+      img:"/Our Projects/8.jpg",
+    },
 ];
 
 function Projects() {
@@ -79,15 +88,16 @@ function Projects() {
               </div>
 
               {/* Card */}
-              <div className="group relative flex h-[400px] w-[300px] flex-col justify-end rounded-2xl bg-zinc-400/90 backdrop-blur-sm p-4 text-white overflow-hidden">
-                <div className="relative h-full flex flex-col transition-all duration-300">
+              <div className="group relative flex h-[400px] w-[300px] flex-col justify-end rounded-2xl backdrop-blur-sm text-white overflow-hidden">
+              <img src={project.img} alt={project.title} className="absolute h-full"/>
+                <div className="relative h-full flex flex-col transition-all duration-300 text-black mt-4 ml-6">
                   {/* Title */}
                   <div className="text-xl font-bold group-hover:-translate-y-0 transition-all duration-300">
                     {project.title}
                   </div>
 
                   {/* Description */}
-                  <div className="text-sm text-zinc-300 transform translate-y-60 opacity-0 group-hover:opacity-100 group-hover:translate-y-48 transition-all duration-300">
+                  <div className="text-sm text-black transform translate-y-60 opacity-0 group-hover:opacity-100 group-hover:translate-y-48 transition-all duration-300">
                     {project.description}
                   </div>
 
