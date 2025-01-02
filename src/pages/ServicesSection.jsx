@@ -1,16 +1,16 @@
-import { AreaChart, Area, ResponsiveContainer } from "recharts";
-import { Bot, Frame, Database } from "lucide-react";
+// import { AreaChart, Area, ResponsiveContainer } from "recharts";
+// import { Bot, Frame, Database } from "lucide-react";
 
 const ServicesSection = () => {
-  const data = [
-    { name: "Jan", value: 40 },
-    { name: "Feb", value: 30 },
-    { name: "Mar", value: 45 },
-    { name: "Apr", value: 35 },
-    { name: "May", value: 55 },
-    { name: "Jun", value: 40 },
-    { name: "Jul", value: 50 },
-  ];
+  // const data = [
+  //   { name: "Jan", value: 40 },
+  //   { name: "Feb", value: 30 },
+  //   { name: "Mar", value: 45 },
+  //   { name: "Apr", value: 35 },
+  //   { name: "May", value: 55 },
+  //   { name: "Jun", value: 40 },
+  //   { name: "Jul", value: 50 },
+  // ];
 
   const services = [
     {

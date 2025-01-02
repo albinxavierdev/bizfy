@@ -32,7 +32,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-2 border-t md:border-none pt-4 md:pt-0">
                         <a href="#services" className="hover:text-[#0E62A6]">Services</a>
                         <a href="#process" className="hover:text-[#0E62A6]">Process</a>
-                        <a href="#work" className="hover:text-[#0E62A6]">Projects</a>
+                        <a href="#projects" className="hover:text-[#0E62A6]">Projects</a>
                         <a href="#plans" className="hover:text-[#0E62A6]">Careers</a>
                         {/* <a href="#team" className="hover:text-[#0E62A6]">Team</a>
                         <a href="#contact" className="hover:text-[#0E62A6]">

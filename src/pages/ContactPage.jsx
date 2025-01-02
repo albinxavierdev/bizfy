@@ -1,74 +1,74 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const ContactPage = () => {
   const [msg, setMsg] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({
+    Contact: "",
+    Email: "",
+  });
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  const validatePhone = (phone) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
   };
 
-  const validateContact = (contact) => {
-    const contactRegex = /^\d{10}$/;
-    return contactRegex.test(contact);
+  const validateEmail = (email) => {
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    return gmailRegex.test(email);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const email = form.email.value;
-    const contact = form.contact.value;
+    const formData = new FormData(form);
 
-    // Validation checks
+    const phone = formData.get("Contact");
+    const email = formData.get("Email");
+
+    let isValid = true;
+    const newErrors = { Contact: "", Email: "" };
+
+    if (!validatePhone(phone)) {
+      newErrors.Contact = "Please enter a valid 10-digit phone number";
+      isValid = false;
+    }
+
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
-      return;
+      newErrors.Email = "Please enter a valid Gmail address";
+      isValid = false;
     }
 
-    if (!validateContact(contact)) {
-      setError("Please enter a valid 10-digit contact number.");
+    setErrors(newErrors);
+
+    if (!isValid) {
       return;
     }
-
-    setError(""); // Clear any previous errors
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbwjvHS_j2HOIzpSAu1wSt9g0fd7hTYNkZ4nRvoVzaZKPzyUeu7uT1GU_--mJbM2TmqE/exec";
+      "https://script.google.com/macros/s/AKfycbyaFAY1rzoZXY_5x6xV14ykCg_9u1IBRufAz99ik1U8h5GFh6MSKnHQ-2sTwmSTxLF1/exec";
 
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    fetch(scriptURL, { method: "POST", body: formData })
       .then((response) => {
+        console.log("Success!", response);
         setMsg("Message sent successfully");
-        setTimeout(() => setMsg(""), 3000);
+        setTimeout(() => setMsg(""), 5000);
         form.reset();
+        setErrors({ Contact: "", Email: "" });
       })
       .catch((error) => console.error("Error!", error.message));
   };
 
   return (
-    <div className="bg-[#01111f] min-h-screen flex flex-col items-center p-6 pt-20">
-      <h1 className="text-4xl font-bold text-white mb-6" data-aos="fade-right">
+    <div
+      id="contact"
+      className="py-16 flex flex-col justify-center items-center bg-transparent text-white"
+    >
+      <h1
+        className="text-4xl font-bold text-center text-white mb-6"
+        data-aos="fade-right"
+      >
         Get in <span className="text-blue-600">Touch</span>
       </h1>
-
-      {msg && (
-        <div
-          id="msg"
-          className="bg-green-500 text-white px-4 py-2 rounded mb-4"
-        >
-          {msg}
-        </div>
-      )}
-
-      {error && (
-        <div
-          id="error"
-          className="bg-red-500 text-white px-4 py-2 rounded mb-4"
-        >
-          {error}
-        </div>
-      )}
-
       <div className="grid md:grid-cols-2 gap-0 w-full max-w-6xl p-4 ">
         <div className="space-y-6 font-4xl w-2/3">
           <div className="pb-4 border-b border-gray-500">
@@ -96,80 +96,66 @@ const ContactPage = () => {
             </a>
           </div>
         </div>
-
-        <form
-          onSubmit={handleSubmit}
-          name="submit-to-google-sheet"
-          className=" p-6 rounded-lg space-y-4"
-          data-aos="fade-left"
-          data-aos-duration="1000"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-gray-400">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                placeholder="John"
-                required
-                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-400">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Wick"
-                required
-                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
-              />
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap">
+              
+            <div className="contact-right flex-1 max-w-md ml-auto">
+            <span id="msg" className="text-blue-500 mb-4 block">
+                {msg}
+              </span>
+              <form name="submit-to-google-sheet" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="FirstName"
+                  placeholder="Your Name"
+                  required
+                  className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="text"
+                  name="LastName"
+                  placeholder="Your Surname"
+                  required
+                  className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="email"
+                  name="Email"
+                  placeholder="Your Gmail"
+                  required
+                  className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                {errors.Email && (
+                  <p className="text-red-500 mb-2">{errors.Email}</p>
+                )}
+                <input
+                  type="tel"
+                  name="Contact"
+                  placeholder="Your Phone Number"
+                  required
+                  className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                {errors.Contact && (
+                  <p className="text-red-500 mb-2">{errors.Contact}</p>
+                )}
+                <input
+                  type="text"
+                  name="Message"
+                  placeholder="Message"
+                  required
+                  className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  type="submit"
+                  className="btn btn2 bg-blue-800 text-white py-3 px-6 rounded-lg hover:bg-blue-500 transition-colors"
+                >
+                  Submit
+                </button>
+              </form>
+              
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-gray-400">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="johnwick@bizfy.in"
-                required
-                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-400">Phone</label>
-              <input
-                type="tel"
-                name="contact"
-                placeholder="1234567890"
-                required
-                className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-gray-400">Message</label>
-            <textarea
-              rows="4"
-              name="message"
-              placeholder="Your message here..."
-              required
-              className="text-gray-100 bg-transparent border border-gray-700 rounded w-full px-3 py-2"
-            ></textarea>
-          </div>
-
-          <div className="text-center">
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );
