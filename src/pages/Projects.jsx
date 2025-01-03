@@ -97,12 +97,12 @@ function Projects() {
                   </div>
 
                   {/* Description */}
-                  <div className="text-sm text-black transform translate-y-60 opacity-0 group-hover:opacity-100 group-hover:translate-y-48 transition-all duration-300">
+                  <div className="text-md text-black transform translate-y-60 opacity-0 group-hover:opacity-100 group-hover:translate-y-52 transition-all duration-300">
                     {project.description}
                   </div>
 
                   {/* Visit Button */}
-                  <div className="mt-4 transform translate-y-60 opacity-0 transition-all duration-300 group-hover:translate-y-48 group-hover:opacity-100">
+                  {/* <div className="mt-4 transform translate-y-60 opacity-0 transition-all duration-300 group-hover:translate-y-48 group-hover:opacity-100">
                     <button className="flex items-center gap-2 bg-transparent px-4 py-2 rounded-lg hover:bg-blue-100/30 transition-colors">
                       Visit
                       <svg
@@ -119,7 +119,7 @@ function Projects() {
                         />
                       </svg>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

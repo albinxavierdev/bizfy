@@ -50,7 +50,7 @@ const Footer = () => {
                     </div>
 
                     {/* Social Links Column */}
-                    <div className="hidden md:flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 border-t md:border-none">
                         <a href="https://www.linkedin.com/company/bizfysolutions/" className="hover:text-[#0E62A6]">LinkedIn</a>
                         <a href="https://www.instagram.com/bizfysolutions" className="hover:text-[#0E62A6]">Instagram</a>
                         <a href="https://www.facebook.com/bizfysolutions" className="hover:text-[#0E62A6]">Facebook</a>
