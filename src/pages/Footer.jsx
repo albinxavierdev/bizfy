@@ -54,8 +54,8 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/company/bizfysolutions/" className="hover:text-[#0E62A6]">LinkedIn</a>
                         <a href="https://www.instagram.com/bizfysolutions" className="hover:text-[#0E62A6]">Instagram</a>
                         <a href="https://www.facebook.com/bizfysolutions" className="hover:text-[#0E62A6]">Facebook</a>
-                        <a href="#" className="hover:text-[#0E62A6]">X</a>
-                        <a href="#" className="hover:text-[#0E62A6]">YouTube</a>
+                        <a href="https://x.com/bizfysolutions?s=09" className="hover:text-[#0E62A6]">X</a>
+                        {/* <a href="#" className="hover:text-[#0E62A6]">YouTube</a> */}
                     </div>
 
                     
