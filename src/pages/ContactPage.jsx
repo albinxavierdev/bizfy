@@ -70,7 +70,7 @@ const ContactPage = () => {
         Get in <span className="text-blue-600">Touch</span>
       </h1>
       <div className="grid md:grid-cols-2 gap-0 w-full max-w-6xl p-4 ">
-        <div className="space-y-6 font-4xl w-2/3">
+        <div className="space-y-6 font-4xl w-2/3 pl-5 sm:pl-0">
           <div className="pb-4 border-b border-gray-500">
             <p className="text-gray-400 font-semibold">Office</p>
             <p className="text-white">204, C.S Naidu Arcade, Old Palasiya</p>
