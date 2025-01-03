@@ -9,7 +9,7 @@ const Footer = () => {
                     className="text-4xl relative hover:after:w-full hover:after:bg-[#0E62A6] after:absolute after:left-0 after:bottom-1 after:h-[2px] after:w-0 after:transition-all"
                     data-aos="fade-left"
                 >
-                    info<span className="text-[#0E62A6]">@</span>bizfy.com
+                    info<span className="text-[#0E62A6]">@</span>bizfy.in
                 </a>
             </header>
 
