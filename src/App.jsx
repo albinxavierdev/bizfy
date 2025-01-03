@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <div className="relative h-full w-full overflow-hidden bg-[#01111f] ">
+      <div id="home" className="relative h-full w-full overflow-hidden bg-[#01111f] ">
         <DotCursor />
         <Navbar className="z-10" />
         <div

@@ -87,7 +87,7 @@ const ServicesSection = () => {
       description:
         "Get expert guidance and dedicated resources to develop and execute your AI strategy from concept to implementation.",
       content: (
-        <div className="relative h-64  border border-gray-700 rounded-lg">
+        <div className="relative h-full  border border-gray-700 rounded-lg">
           {/* <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <defs>
@@ -120,7 +120,7 @@ const ServicesSection = () => {
       </nav>
 
       <div
-        className="px-10 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-2"
+        className="px-0 sm:px-10 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-2"
         data-aos="fade-up"
       >
         {services.map((service, index) => (
@@ -136,6 +136,7 @@ const ServicesSection = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

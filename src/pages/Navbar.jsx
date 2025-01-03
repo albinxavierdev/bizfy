@@ -12,9 +12,11 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full flex justify-between items-center px-4 py-2 h-[70px] backdrop-blur-md text-white z-50">
       {/* Logo */}
       <div className="navbar-logo">
-        <span className={`transition-all duration-300 ${isMenuOpen ? "w-[250px] h-[50px]" : "w-[200px] h-[40px]"}`}>
+        <Link to="home" smooth={true}
+            duration={800}
+            onClick={toggleMenu} ><span className={`transition-all cursor-pointer duration-300 ${isMenuOpen ? "w-[250px] h-[50px]" : "w-[200px] h-[40px]"}`}>
           <img src="/white logo-02.png" alt="Logo" className=" object-contain w-fit h-10" />
-        </span>
+        </span></Link>
       </div>
 
       {/* Menu Icon */}
