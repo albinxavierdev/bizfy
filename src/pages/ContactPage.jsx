@@ -107,21 +107,21 @@ const ContactPage = () => {
                 <input
                   type="text"
                   name="FirstName"
-                  placeholder="Your Name"
+                  placeholder="Your First Name"
                   required
                   className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                   type="text"
                   name="LastName"
-                  placeholder="Your Surname"
+                  placeholder="Your Last Name"
                   required
                   className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                   type="email"
                   name="Email"
-                  placeholder="Your Gmail"
+                  placeholder="Your Email"
                   required
                   className="w-full bg-gray-800 text-white py-3 px-4 mb-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
