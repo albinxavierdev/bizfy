@@ -36,7 +36,7 @@ const AgencyHero = () => {
   }, []);
 
   return (
-    <div className= "agencyText bg-[#01111f] h-full flex items-center justify-start py-20 px-8 overflow-hidden">
+    <div id='about' className= "agencyText bg-[#01111f] h-full flex items-center justify-start py-20 px-8 overflow-hidden">
       <div className="w-full text-start">
         <div className="mt-4">
           <h1 className="text-[1.5rem] font-normal text-white leading-tight mb-4 md:text-[3.5rem]">

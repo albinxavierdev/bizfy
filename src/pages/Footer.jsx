@@ -33,7 +33,7 @@ const Footer = () => {
                         <a href="#services" className="hover:text-[#0E62A6]">Services</a>
                         <a href="#process" className="hover:text-[#0E62A6]">Process</a>
                         <a href="#projects" className="hover:text-[#0E62A6]">Projects</a>
-                        <a href="#plans" className="hover:text-[#0E62A6]">Careers</a>
+                        <a href="https://www.linkedin.com/company/bizfysolutions/" className="hover:text-[#0E62A6]">Careers</a>
                         {/* <a href="#team" className="hover:text-[#0E62A6]">Team</a>
                         <a href="#contact" className="hover:text-[#0E62A6]">
                             Contact <span className="transform rotate-45">↗</span>
@@ -45,8 +45,8 @@ const Footer = () => {
                     <div className="flex flex-col gap-2 border-t md:border-none pt-4 md:pt-0">
                     <a href="#about" className="hover:text-[#0E62A6]">About Us</a>
                     <a href="#contact" className="hover:text-[#0E62A6]">Contact Us</a>
-                    <a href="#privacy" className="hover:text-[#0E62A6]">Privacy Policy</a>
-                    <a href="#t&c" className="hover:text-[#0E62A6]">Terms & Conditions</a>
+                    <a href="#" className="hover:text-[#0E62A6]">Privacy Policy</a>
+                    <a href="#" className="hover:text-[#0E62A6]">Terms & Conditions</a>
                     </div>
 
                     {/* Social Links Column */}
