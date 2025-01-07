@@ -40,7 +40,7 @@ const ServicesSection = () => {
               <div className="text-gray-400">Write personalised message</div>
             </div>
           </div> */}
-          <img src="/Our Services/6.jpg" alt="" className="rounded-lg"/>
+          <img src="/Our Services/Subscription Tier.jpg" alt="" className="rounded-lg"/>
         </div>
       ),
     },
