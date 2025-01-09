@@ -11,15 +11,21 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^5.1.0",
+    "@headlessui/react": "^2.2.0",
+    "@lottiefiles/dotlottie-react": "^0.12.1",
     "@react-three/fiber": "^8.17.10",
     "@tsparticles/react": "^3.0.0",
     "aos": "^2.3.4",
     "axios": "^1.7.9",
+    "firebase": "^11.1.0",
     "gsap": "^3.12.5",
+    "lottie-react": "^2.4.0",
     "lucide-react": "^0.469.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
+    "react-icon": "^1.0.0",
+    "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.0",
     "react-scroll": "^1.9.0",
     "react-tsparticles": "^2.12.2",
@@ -30,7 +36,8 @@
     "swiper": "^11.1.15",
     "three": "^0.171.0",
     "tsparticles": "^3.7.1",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
