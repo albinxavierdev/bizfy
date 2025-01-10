@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { z } from "zod";
+import { useEffect, useState } from "react";
+// import { z } from "zod";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import {
@@ -61,19 +61,71 @@ const designStage = [
 
 export default function ProjectEstimatorForm() {
   const [step, setStep] = useState(1);
-  const [history, setHistory] = useState([]); // Tracks visited steps
   const [formData, setFormData] = useState({
     devPath: "",
     techSuite: "",
     designStage: "",
     projectGoal: "",
     projectComplexity: "",
-    firstName: "",
+    fullName: "",
     businessEmail: "",
     contactNumber: "",
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [totalCost, setTotalCost] = useState(0);
+
+  const costMapping = {
+    projectGoal: {
+      "Discovery (2-3 weeks)": 1000,
+      "Clickable Prototype (2-3 weeks)": 1500,
+      "Proof of Concept (PoC) (1.5-2 months)": 3000,
+      "Minimum Viable Product (MVP) (3-4 months)": 5000,
+      "Complete Solution (4+ months)": 10000,
+    },
+    projectComplexity: {
+      "Simple Website": 500,
+      "Web or Mobile App with 3+ Features": 2000,
+      "Complex Digital Solution": 5000,
+      "Highly Complex Platform (like SAP or Netflix)": 10000,
+    },
+    devPath: {
+      "Mobile App Only": 1500,
+      "Web App Only": 1000,
+      "Mobile & Web": 3000,
+      "Not Sure": 100,
+    },
+    techSuite: {
+      "Custom code": 3000,
+      "No-Code": 1000,
+      "Not Sure": 100,
+    },
+    designStage: {
+      "We Need a Design": 2000,
+      "We Already Have a Design": 1500,
+      "We Have some Sketches": 1000,
+      "Not Sure": 100,
+    },
+  };
+
+  const calculateCost = () => {
+    let cost = 0;
+    cost += costMapping.projectGoal[formData.projectGoal || 0] ;
+    cost += costMapping.projectComplexity[formData.projectComplexity] || 0;
+    cost += costMapping.devPath[formData.devPath] || 0;
+    cost += costMapping.techSuite[formData.techSuite] || 0;
+    cost += costMapping.designStage[formData.designStage] || 0;
+    setTotalCost(cost);
+  };
+
+  useEffect(() => {
+    if(step === 1){
+      calculateCost();
+      if (step === 2) {
+        calculateCost();
+      }
+    }
+  }, [step, formData]);
 
   const validateStep = (currentStep) => {
     const currentErrors = {};
@@ -91,24 +143,44 @@ export default function ProjectEstimatorForm() {
     if (validateStep(step)) {
       if (
         step === 1 &&
-        formData.projectGoal === "Discovery (2-3 weeks)" &&
-        formData.projectGoal === "Clickable Prototype (2-3 weeks)"
+        formData.projectGoal === "Discovery (2-3 weeks)" ||
+          formData.projectGoal === "Clickable Prototype (2-3 weeks)"
       ) {
-        setHistory((prev) => [...prev, step]); // Save current step to history
-        setStep(3); // Skip Step 2
+        setStep(3);
       } else {
-        setHistory((prev) => [...prev, step]); // Save current step to history
         setStep(step + 1);
       }
     }
   };
 
   const handleBack = () => {
-    if (history.length > 0) {
-      const lastStep = history.pop(); // Get the last step from history
-      setStep(lastStep);
-      setHistory([...history]); // Update the history
+    if (step === 3) {
+      if (
+        formData.projectGoal === "Discovery (2-3 weeks)" ||
+        formData.projectGoal === "Clickable Prototype (2-3 weeks)"
+      ) {
+        setStep(1);
+      } else {
+        setStep(2);
+      }
+    } else if (step === 2) {
+      setStep(1);
     }
+  };
+
+  const handleRecalculate = () => {
+    setFormData({
+      devPath: "",
+      techSuite: "",
+      designStage: "",
+      projectGoal: "",
+      projectComplexity: "",
+      firstName: "",
+      businessEmail: "",
+      contactNumber: "",
+    });
+    setTotalCost(0);
+    setStep(1);
   };
 
   // const handleSubmit = (e) => {
@@ -136,7 +208,7 @@ export default function ProjectEstimatorForm() {
     e.preventDefault();
     try {
       // const validatedData = formSchema.parse(formData);
-      await addDoc(collection(db, "test-bizfy"), formData);
+      await addDoc(collection(db, "test-bizfy"), formData, totalCost);
       alert("Form submitted successfully!");
       setFormData({
         devPath: "",
@@ -148,6 +220,7 @@ export default function ProjectEstimatorForm() {
         businessEmail: "",
         contactNumber: "",
       });
+      setTotalCost(0);
       setSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -305,6 +378,10 @@ export default function ProjectEstimatorForm() {
 
         {step === 3 && (
           <div className="space-y-3 flex flex-col w-full">
+          <p className="text-xl text-white font-semibold">
+              Total estimated cost:{" "}
+              <span className="text-green-500">${totalCost}</span>
+            </p>
             <Input
               placeholder="First Name *"
               value={formData.firstName}
@@ -346,6 +423,11 @@ export default function ProjectEstimatorForm() {
               className={"bg-red-500 hover:bg-red-700"}
             >
               Go Back
+            </Button>
+          )}
+          {step === 3 && (
+            <Button onClick={handleRecalculate} variant="outline" className={"bg-green-500 hover:bg-green-700"}>
+              Recalculate
             </Button>
           )}
           <Button
