@@ -49,8 +49,8 @@ const HeroContent = () => {
               duration={800}
               onClick={toggleMenu}
             >
-              Talk to Us
-            </Link>
+              Project Estimate
+              </Link>
           </button>
         </div>
       </div>
