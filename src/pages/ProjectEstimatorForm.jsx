@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { z } from "zod";
+// import { z } from "zod";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import {
@@ -12,22 +12,22 @@ import {
 import { db } from "../db/firebase";
 import { collection, addDoc } from "firebase/firestore";
 
-const formSchema = z.object({
-  projectGoal: z.string().min(1, "Project goal is required"),
-  projectComplexity: z.string().min(1, "Project complexity is required"),
-  devPath: z.string().optional(),
-  techSuite: z.string().optional(),
-  designStage: z.string().optional(),
-  firstName: z.string().min(1, "First name is required"),
-  businessEmail: z
-    .string()
-    .email("Invalid email address")
-    .min(1, "Business email is required"),
-  contactNumber: z
-    .string()
-    .min(10, "Contact number must be at least 10 digits")
-    .max(11, "Contact number must not exceed 11 digits"),
-});
+// const formSchema = z.object({
+//   projectGoal: z.string().min(1, "Project goal is required"),
+//   projectComplexity: z.string().min(1, "Project complexity is required"),
+//   devPath: z.string().optional(),
+//   techSuite: z.string().optional(),
+//   designStage: z.string().optional(),
+//   firstName: z.string().min(1, "First name is required"),
+//   businessEmail: z
+//     .string()
+//     .email("Invalid email address")
+//     .min(1, "Business email is required"),
+//   contactNumber: z
+//     .string()
+//     .min(10, "Contact number must be at least 10 digits")
+//     .max(11, "Contact number must not exceed 11 digits"),
+// });
 
 const projectGoals = [
   "Discovery (2-3 weeks)",
@@ -207,8 +207,8 @@ export default function ProjectEstimatorForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const validatedData = formSchema.parse(formData);
-      await addDoc(collection(db, "test-bizfy"), validatedData, totalCost);
+      // const validatedData = formSchema.parse(formData);
+      await addDoc(collection(db, "test-bizfy"), formData, totalCost);
       alert("Form submitted successfully!");
       setFormData({
         devPath: "",
