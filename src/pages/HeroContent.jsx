@@ -2,13 +2,6 @@ import "@fontsource/roboto";
 import { useState } from "react";
 import { Link } from "react-scroll";
 const HeroContent = () => {
-  // const servicesClick = () => {
-  //   window.location.href = "#services";
-  // }
-  // const contactClick = () => {
-  //   window.location.href = "#contact";
-
-  // }
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

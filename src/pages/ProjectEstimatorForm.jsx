@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { z } from "zod";
+import { z } from "zod";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import {
@@ -12,22 +12,22 @@ import {
 import { db } from "../db/firebase";
 import { collection, addDoc } from "firebase/firestore";
 
-// const formSchema = z.object({
-//   projectGoal: z.string().min(1, "Project goal is required"),
-//   projectComplexity: z.string().min(1, "Project complexity is required"),
-//   devPath: z.string().optional(),
-//   techSuite: z.string().optional(),
-//   designStage: z.string().optional(),
-//   firstName: z.string().min(1, "First name is required"),
-//   businessEmail: z
-//     .string()
-//     .email("Invalid email address")
-//     .min(1, "Business email is required"),
-//   contactNumber: z
-//     .string()
-//     .min(10, "Contact number must be at least 10 digits")
-//     .max(11, "Contact number must not exceed 11 digits"),
-// });
+const formSchema = z.object({
+  projectGoal: z.string().min(1, "Project goal is required"),
+  projectComplexity: z.string().min(1, "Project complexity is required"),
+  devPath: z.string().optional(),
+  techSuite: z.string().optional(),
+  designStage: z.string().optional(),
+  fullname: z.string().min(1, "Full name is required"),
+  businessEmail: z
+    .string()
+    .email("Invalid email address")
+    .min(1, "Business email is required"),
+  contactNumber: z
+    .string()
+    .min(10, "Contact number must be at least 10 digits")
+    .max(11, "Contact number must not exceed 11 digits"),
+});
 
 const projectGoals = [
   "Discovery (2-3 weeks)",
@@ -67,7 +67,7 @@ export default function ProjectEstimatorForm() {
     designStage: "",
     projectGoal: "",
     projectComplexity: "",
-    fullName: "",
+    fullname: "",
     businessEmail: "",
     contactNumber: "",
   });
@@ -175,40 +175,21 @@ export default function ProjectEstimatorForm() {
       designStage: "",
       projectGoal: "",
       projectComplexity: "",
-      firstName: "",
+      fullname: "",
       businessEmail: "",
       contactNumber: "",
     });
     setTotalCost(0);
     setStep(1);
   };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const validatedData = formSchema.parse(formData);
-  //     const existingData =
-  //       JSON.parse(localStorage.getItem("projectEstimatorForm")) || [];
-  //     const updatedData = [...existingData, validatedData];
-
-  //     localStorage.setItem("projectEstimatorForm", JSON.stringify(updatedData));
-  //     setSubmitted(true);
-  //   } catch (error) {
-  //     if (error instanceof z.ZodError) {
-  //       const formErrors = {};
-  //       error.errors.forEach((err) => {
-  //         if (err.path[0]) formErrors[err.path[0]] = err.message;
-  //       });
-  //       setErrors(formErrors);
-  //     }
-  //   }
-  // };
-
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const validatedData = formSchema.parse(formData);
-      await addDoc(collection(db, "test-bizfy"), formData, totalCost);
+      const validatedData = formSchema.parse(formData);
+      const sendData = { ...validatedData, totalCost, };
+      await addDoc(collection(db, "bizfy-data"), sendData);
       alert("Form submitted successfully!");
       setFormData({
         devPath: "",
@@ -216,7 +197,7 @@ export default function ProjectEstimatorForm() {
         designStage: "",
         projectGoal: "",
         projectComplexity: "",
-        firstName: "",
+        fullname: "",
         businessEmail: "",
         contactNumber: "",
       });
@@ -224,6 +205,7 @@ export default function ProjectEstimatorForm() {
       setSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
+      alert("Please Fill all Fields Properly!");
     }
   };
 
@@ -383,14 +365,14 @@ export default function ProjectEstimatorForm() {
               <span className="text-green-500">${totalCost}</span>
             </p>
             <Input
-              placeholder="First Name *"
-              value={formData.firstName}
+              placeholder="Full Name *"
+              value={formData.fullname}
               onChange={(e) =>
-                setFormData({ ...formData, firstName: e.target.value })
+                setFormData({ ...formData, fullname: e.target.value })
               }
             />
-            {errors.firstName && (
-              <p className="text-red-500">{errors.firstName}</p>
+            {errors.fullname && (
+              <p className="text-red-500">{errors.fullname}</p>
             )}
             <Input
               placeholder="Business Email *"
@@ -442,5 +424,3 @@ export default function ProjectEstimatorForm() {
     </div>
   );
 }
-
-
