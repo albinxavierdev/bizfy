@@ -52,7 +52,7 @@ function App() {
         <div id='projects'>
           <Projects/>
         </div>
-        <div id='project_estimate_compo'>
+        <div id='project Estimation'>
           <ProjectEstimateCompo/>
         </div>
         <div id="contact us">

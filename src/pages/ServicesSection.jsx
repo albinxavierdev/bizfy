@@ -17,7 +17,7 @@ const ServicesSection = () => {
       title: "Custom Software Development",
       description:
       "Deliver custom software solutions, from web and mobile apps to enterprise-grade systems, ensuring exceptional performance, seamless integration, business alignment.",
-        // "Deliver high-quality, custom-built software solutions tailored to your business needs. From web and mobile applications to enterprise-grade software, we ensure exceptional performance and seamless integration.",
+        // "Deliver high-quality, custom-built software solutions tailored to your business needs. From web and mobile applications to enterprise-grade software, we ensure exceptional performance and seamless integration.",
       content: (
         <div className=" border border-gray-600 rounded-lg">
           {/* <div className="flex items-center gap-4 p-2 mb-2 border border-gray-600 rounded-lg">
