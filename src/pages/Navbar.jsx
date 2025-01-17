@@ -52,7 +52,7 @@ const Navbar = () => {
           isMenuOpen ? "flex" : "hidden"
         }`}
       >
-        {["process", "services", "projects", "contact us"].map(
+        {["process", "services", "projects", "project Estimation", "contact us"].map(
           (item, index) => (
             <Link
               key={index}

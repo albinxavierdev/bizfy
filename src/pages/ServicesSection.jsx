@@ -14,9 +14,10 @@ const ServicesSection = () => {
 
   const services = [
     {
-      title: "Workflow automations",
+      title: "Custom Software Development",
       description:
-        "Streamline your operations by automating repetitive tasks and processes, boosting efficiency and reducing manual workload.",
+      "Deliver custom software solutions, from web and mobile apps to enterprise-grade systems, ensuring exceptional performance, seamless integration, business alignment.",
+        // "Deliver high-quality, custom-built software solutions tailored to your business needs. From web and mobile applications to enterprise-grade software, we ensure exceptional performance and seamless integration.",
       content: (
         <div className=" border border-gray-600 rounded-lg">
           {/* <div className="flex items-center gap-4 p-2 mb-2 border border-gray-600 rounded-lg">
@@ -126,7 +127,7 @@ const ServicesSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-[#01111f] p-6 border border-gray-600 rounded-lg flex flex-col justify-end"
+            className="bg-[#01111f] p-6 border border-gray-600 rounded-lg flex flex-col justify-end overflow-hidden text-ellipsis whitespace-break-spaces"
             data-aos="fade-up">
             {service.content}
             <h2 className="text-xl font-bold text-white mt-6">

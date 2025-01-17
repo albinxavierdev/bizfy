@@ -13,6 +13,7 @@ import Circle from "./canvas/Circle";
 import StarryBackground from "./canvas/StarryBackground";
 import DotCursor from "./canvas/DotCursor";
 import Projects from "./pages/Projects";
+import ProjectEstimateCompo from "./pages/ProjectEstimateCompo";
 
 function App() {
   useEffect(() => {
@@ -50,6 +51,9 @@ function App() {
         </div> */}
         <div id='projects'>
           <Projects/>
+        </div>
+        <div id='project_estimate_compo'>
+          <ProjectEstimateCompo/>
         </div>
         <div id="contact us">
           <ContactPage />

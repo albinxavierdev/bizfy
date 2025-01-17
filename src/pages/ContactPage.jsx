@@ -1,18 +1,19 @@
-import ProjectEstimatorForm from "./ProjectEstimatorForm";
+import GoogleForm from "./ui/GoogleForm";
+
+// import ProjectEstimatorForm from "./ProjectEstimatorForm";
 const ContactPage = () => {
-  
   return (
     <div
       id="contact"
       className="py-16 flex flex-col justify-center items-center bg-transparent text-white"
     >
       <h1
-        className="text-4xl font-bold text-center text-white mb-6"
+        className="text-4xl font-bold text-center text-white mb-10"
         data-aos="fade-right"
       >
         Get in <span className="text-blue-600">Touch</span>
       </h1>
-      <div className="grid md:grid-cols-2 gap-0 w-full max-w-6xl p-4 ">
+      <div className="grid md:grid-cols-2 gap-0 w-full max-w-6xl p-4">
         <div className="space-y-6 font-4xl w-2/3 pl-5 sm:pl-0">
           <div className="pb-4 border-b border-gray-500">
             <p className="text-gray-400 font-semibold">Office</p>
@@ -39,7 +40,8 @@ const ContactPage = () => {
             </a>
           </div>
         </div>
-        <ProjectEstimatorForm />
+        {/* <ProjectEstimatorForm /> */}
+        <GoogleForm />
       </div>
     </div>
   );
