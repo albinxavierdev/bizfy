@@ -1,13 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { splitVendorChunkPlugin } from 'vite'
 import { compression } from 'vite-plugin-compression2'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    splitVendorChunkPlugin(),
     compression({
       algorithm: 'gzip',
       exclude: [/\.(br)$/, /\.(gz)$/],
@@ -29,13 +27,26 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'animation-vendor': ['aos', 'gsap', 'lottie-react', 'framer-motion'],
-          'ui-vendor': ['@headlessui/react', 'lucide-react', 'react-icons'],
-          'three-vendor': ['three', '@react-three/fiber'],
-          'particles-vendor': ['tsparticles', '@tsparticles/react', 'react-tsparticles'],
-        },
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('aos') || id.includes('gsap') || id.includes('lottie-react') || id.includes('framer-motion')) {
+              return 'animation-vendor';
+            }
+            if (id.includes('@headlessui/react') || id.includes('lucide-react') || id.includes('react-icons')) {
+              return 'ui-vendor';
+            }
+            if (id.includes('three') || id.includes('@react-three/fiber')) {
+              return 'three-vendor';
+            }
+            if (id.includes('tsparticles') || id.includes('@tsparticles/react') || id.includes('react-tsparticles')) {
+              return 'particles-vendor';
+            }
+            return 'vendor'; // all other node_modules
+          }
+        }
       },
     },
     chunkSizeWarningLimit: 1500,
