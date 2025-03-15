@@ -41,10 +41,10 @@ export default defineConfig({
             if (id.includes('three') || id.includes('@react-three/fiber')) {
               return 'three-vendor';
             }
-            if (id.includes('tsparticles') || id.includes('@tsparticles/react') || id.includes('react-tsparticles')) {
+            if (id.includes('tsparticles') || id.includes('@tsparticles/react')) {
               return 'particles-vendor';
             }
-            return 'vendor'; // all other node_modules
+            return 'vendor';
           }
         }
       },
@@ -55,12 +55,11 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
-      },
+        drop_debugger: true
+      }
     },
     sourcemap: false,
-    reportCompressedSize: false,
+    reportCompressedSize: false
   },
   optimizeDeps: {
     include: [
@@ -73,10 +72,7 @@ export default defineConfig({
       '@emailjs/browser',
       'three',
       '@react-three/fiber'
-    ],
-    exclude: ['firebase'],
+    ]
   },
   esbuild: {
-    jsxInject: `import React from 'react'`,
-  },
-})
+    jsxInject: `
