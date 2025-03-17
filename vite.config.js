@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { compression } from 'vite-plugin-compression2'
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: './', // Add this line
   plugins: [
     react(),
     compression({
@@ -13,16 +13,8 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
-    strictPort: true,
+    strictPort: false,
     host: true,
-    proxy: {
-      '/api': {
-        target: 'https://script.google.com/macros/s/AKfycbxrjHfa0_rUUADlo7_fSc-OiPt-MrgGM8rgyRpZFjH2gOfT1XsP0EE-YcEyF7ssTTCAqg/exec', // Backend server
-        changeOrigin: true,
-        secure: false, // Ensures the origin of the host header matches the target
-        rewrite: (path) => path.replace(/^\/api/, ''), // Optional: Remove '/api' from the request path
-      },
-    },
   },
   build: {
     rollupOptions: {
@@ -47,10 +39,9 @@ export default defineConfig({
             return 'vendor';
           }
         }
-      },
+      }
     },
     chunkSizeWarningLimit: 1500,
-    cssCodeSplit: true,
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -69,10 +60,8 @@ export default defineConfig({
       'aos', 
       'gsap',
       'framer-motion',
-      '@emailjs/browser',
       'three',
       '@react-three/fiber'
     ]
-  },
-  esbuild: {
-    jsxInject: `
+  }
+})
